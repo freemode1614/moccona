@@ -1,0 +1,21 @@
+{
+  "name": "moccona",
+  "version": "0.0.0",
+  "description": "Coffee brand, I drink a lot",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/freemode1614/moccona.git"
+  },
+  "keywords": [
+    "bundler"
+  ],
+  "author": "wp.l",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freemode1614/moccona/issues"
+  },
+  "homepage": "https://github.com/freemode1614/moccona#readme",
+  "packageManager": "pnpm@8.10.3+sha256.eb2548d6347afc7002a046b7be3ee3c8222bc71f68418dcf9f90fa0a7341c41a"
+}
