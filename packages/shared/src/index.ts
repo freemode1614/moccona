@@ -13,6 +13,18 @@ export type TPluginManagerObj<T> = {
   apply(ctx: T): Promise<void>;
 };
 
+/**
+ *
+ * @example
+ *  ```ts
+ *  const pluginManager = plugin();
+ *  pluginManager.add(()=>{ console.log(1) });
+ *  pluginManager.add(()=>{ console.log(2) });
+ *  pluginManager.add(()=>{ console.log(3) });
+ *  pluginManager.apply();
+ *  ```
+ * @returns
+ */
 export default function createPlugin<
   T extends PluginContext,
 >(): TPluginManagerObj<T> {

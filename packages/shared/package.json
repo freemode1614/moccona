@@ -1,7 +1,7 @@
 {
-  "name": "@moccona/plugin",
+  "name": "@moccona/shared",
   "version": "0.0.0",
-  "description": "A simple plugin system",
+  "description": "Shared utils between @moccona",
   "main": "./lib/index.js",
   "scripts": {
     "build": "tsc",
