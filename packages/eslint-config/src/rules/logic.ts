@@ -59,7 +59,7 @@ export default {
         "no-unsafe-negation": "off", // "Disallow negating the left operand of relational operators"
         "no-unsafe-optional-chaining": "off", // "Disallow use of optional chaining in contexts where the `undefined` value is not allowed"
         "no-unused-private-class-members": "off", // "Disallow unused private class members"
-        "no-unused-vars": "off", // "Disallow unused variables"
+        "no-unused-vars": "error", // "Disallow unused variables"
         "no-use-before-define": "off", // "Disallow the use of variables before they are defined"
         "no-useless-backreference": "off", // "Disallow useless backreferences in regular expressions"
         "require-atomic-updates": "off", // "Disallow assignments that can lead to race conditions due to usage of `await` or `yield`"

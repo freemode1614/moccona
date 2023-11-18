@@ -16,6 +16,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^6.11.0
         version: 6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      eslint-plugin-comments:
+        specifier: ^1.0.0
+        version: 1.0.0(eslint@8.54.0)
       eslint-plugin-compat:
         specifier: ^4.2.0
         version: 4.2.0(eslint@8.54.0)
@@ -68,6 +71,9 @@ importers:
 
   packages/plugin:
     devDependencies:
+      '@moccona/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
       '@types/node':
         specifier: ^20.9.0
         version: 20.9.0
@@ -1100,6 +1106,14 @@ packages:
       path-type: 4.0.0
     dev: false
 
+  /doctrine@0.6.4:
+    resolution: {integrity: sha512-FSGvDB23RFdm/Z2hEINXN1AcBW5I4YBqpGD/lScJV34vuOwrPFyLHN9bwCzLa6lUmqS6ipdp5XlVJRQ6yJ5iSA==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      esutils: 1.1.6
+      isarray: 0.0.1
+    dev: false
+
   /doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
@@ -1296,6 +1310,15 @@ packages:
       eslint-import-resolver-node: 0.3.9
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /eslint-plugin-comments@1.0.0(eslint@8.54.0):
+    resolution: {integrity: sha512-GSRgKpLvV7gKkQMXlHQxRAR5VkHB7cB2B/lLubR4haz2Qd2ACZCVXukXFDAMoiI+8qZ2ZamrxEeavYERjV6cfg==}
+    peerDependencies:
+      eslint: ^1.4.1
+    dependencies:
+      doctrine: 0.6.4
+      eslint: 8.54.0
     dev: false
 
   /eslint-plugin-compat@4.2.0(eslint@8.54.0):
@@ -1597,6 +1620,11 @@ packages:
   /estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
+
+  /esutils@1.1.6:
+    resolution: {integrity: sha512-RG1ZkUT7iFJG9LSHr7KDuuMSlujfeTtMNIcInURxKAxhMtwQhI3NrQhz26gZQYlsYZQKzsnwtpKrFKj9K9Qu1A==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
@@ -2043,6 +2071,10 @@ packages:
     dependencies:
       call-bind: 1.0.5
       get-intrinsic: 1.2.2
+    dev: false
+
+  /isarray@0.0.1:
+    resolution: {integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==}
     dev: false
 
   /isarray@2.0.5:

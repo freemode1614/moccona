@@ -1,10 +1,9 @@
+"use strict";
 /**
  * React
  */
-
-import { Linter } from "eslint";
-
-export default {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
     files: ["**/*.tsx", "**/*.jsx"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -164,4 +163,4 @@ export default {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
     },
-} as Linter.ConfigOverride;
+};

@@ -6,9 +6,9 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc --watch",
-    "test": "vitest --watch false"
+    "test": "vitest --watch false",
+    "lint": "eslint **/*.ts --fix"
   },
-  "type": "module",
   "keywords": [],
   "author": "wp.l",
   "license": "ISC",
@@ -25,6 +25,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
+    "eslint-plugin-comments": "^1.0.0",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.29.0",
@@ -36,5 +37,8 @@
     "eslint-plugin-unicorn": "^49.0.0",
     "fs-extra": "^11.1.1",
     "pkg-types": "^1.0.3"
+  },
+  "eslintConfig": {
+    "extends": "./lib"
   }
 }

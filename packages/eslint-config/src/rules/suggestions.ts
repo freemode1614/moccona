@@ -13,15 +13,15 @@ export default {
         camelcase: "off", // Enforce camelcase naming convention
         "capitalized-comments": "off", // Enforce or disallow capitalization of the first letter of a comment
         "class-methods-use-this": "off", // Enforce that class methods utilize `this`
-        complexity: "off", // Enforce a maximum cyclomatic complexity allowed in a program
+        "complexity": "off", // Enforce a maximum cyclomatic complexity allowed in a program
         "consistent-return": "off", // Require `return` statements to either always or never specify values
         "consistent-this": "off", // Enforce consistent naming when capturing the current execution context
-        curly: "off", // Enforce consistent brace style for all control statements
+        "curly": "off", // Enforce consistent brace style for all control statements
         "default-case": "off", // Require `default` cases in `switch` statements
         "default-case-last": "off", // Enforce default clauses in switch statements to be last
         "default-param-last": "off", // Enforce default parameters to be last
         "dot-notation": "off", // Enforce dot notation whenever possible
-        eqeqeq: "off", // Require the use of `===` and `!==`
+        "eqeqeq": "off", // Require the use of `===` and `!==`
         "func-name-matching": "off", // Require function names to match the name of the variable or property to which they are assigned
         "func-names": "off", // Require or disallow named `function` expressions
         "func-style": "off", // Enforce the consistent use of either `function` declarations or expressions
@@ -142,7 +142,7 @@ export default {
         "prefer-spread": "off", // Require spread operators instead of `.apply()`
         "prefer-template": "off", // Require template literals instead of string concatenation
         "quote-props": "off", // Require quotes around object literal property names
-        radix: "off", // Enforce the consistent use of the radix argument when using `parseInt()`
+        "radix": "off", // Enforce the consistent use of the radix argument when using `parseInt()`
         "require-await": "off", // Disallow async functions which have no `await` expression
         "require-unicode-regexp": "off", // Enforce the use of `u` flag on RegExp
         "require-yield": "off", // Require generator functions to contain `yield`
