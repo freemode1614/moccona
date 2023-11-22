@@ -15,7 +15,7 @@
     "build": "tsc",
     "start": "tsc --watch",
     "test": "vitest --watch false",
-    "lint": "eslint **/*.ts --fix"
+    "lint": "eslint **/*.ts --fix --no-ignore"
   },
   "keywords": [],
   "author": "wp.l",

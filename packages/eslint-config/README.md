@@ -1,6 +1,1 @@
-# @moccona/plugin
-
-- serialize plugin
-- once plugin
-- loop plugin
-
+# @moccona/eslint-config
