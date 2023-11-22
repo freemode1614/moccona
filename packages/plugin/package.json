@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "tsc --watch",
     "test": "vitest --watch false",
-    "lint": "eslint ./src/index.ts --fix"
+    "lint": "eslint **/*.ts --fix"
   },
   "type": "module",
   "keywords": [],
@@ -16,7 +16,6 @@
   "devDependencies": {
     "@moccona/eslint-config": "workspace:*",
     "@types/node": "^20.9.0",
-    "prettier": "^3.1.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },

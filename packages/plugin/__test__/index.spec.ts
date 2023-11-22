@@ -1,4 +1,4 @@
-import { describe, test, it, expect } from "vitest";
+import { test } from "vitest";
 import createPlugin from "../src";
 
 test("Simple plugin system", () => {

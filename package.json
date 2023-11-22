@@ -8,9 +8,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/freemode1614/moccona.git"
   },
-  "keywords": [
-    "bundler"
-  ],
+  "keywords": [],
   "author": "wp.l",
   "license": "MIT",
   "bugs": {

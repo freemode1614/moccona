@@ -3,6 +3,14 @@
   "version": "0.0.0",
   "description": "A simple eslint configuration",
   "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "start": "tsc --watch",
@@ -39,6 +47,6 @@
     "pkg-types": "^1.0.3"
   },
   "eslintConfig": {
-    "extends": "./lib"
+    "extends": "."
   }
 }

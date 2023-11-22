@@ -1,19 +1,14 @@
 import config from "./main";
 
-console.debug(config);
-
 const {
-    overrides,
-    plugins,
     env,
+    ignorePatterns,
+    overrides,
     parserOptions,
-    rules
+    plugins,
+    rules,
 } = config;
 
 export {
-    overrides,
-    plugins,
-    env,
-    parserOptions,
-    rules
-};
+    env, ignorePatterns, overrides, parserOptions, plugins, rules
+}

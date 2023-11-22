@@ -4,6 +4,7 @@ import { readJSONSync } from "fs-extra";
 import { type PackageJson } from "pkg-types";
 import reactOverride from "./overrides/react";
 import tsOverride from "./overrides/typescript";
+import jsonOverride from "./overrides/json";
 import logicRules from "./rules/logic";
 import styleRules from "./rules/styles";
 import suggestionRules from "./rules/suggestions";
@@ -21,16 +22,12 @@ const isXXXProject = (xxx: string) => {
 };
 
 const isReactProject = isXXXProject("react");
-const isTSProject = isXXXProject("typescript");
-
-console.log(
-  'isTSProject', ' --> ', isTSProject
-);
 
 // Default overrides.
 const overrides: Linter.ConfigOverride[] = [
   tsOverride,
-  jestRules
+  jestRules,
+  jsonOverride
 ];
 
 const plugins: string[] = [
@@ -61,6 +58,15 @@ export default {
       experimentalObjectRestSpread: true,
     }
   },
+  ignorePatterns: [
+    // "__test__/**/*",
+    // "*.{spec,test}.{t,j}sx?"
+    // Ignore all .d.ts file
+    "*.d.ts"
+  ],
+  extends: [
+    "plugin:import/recommended"
+  ],
   rules: {
     ...logicRules.rules,
     ...styleRules.rules,

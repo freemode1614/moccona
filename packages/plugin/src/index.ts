@@ -1,6 +1,6 @@
-export interface PluginContext {}
+export interface PluginContext { }
 
-export type PluginHandlerReturn = Promise<any> | void;
+export type PluginHandlerReturn = Promise<unknown> | void;
 
 export type TPluginHandlerObj<T> = {
   name: string;

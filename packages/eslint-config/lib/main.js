@@ -7,6 +7,7 @@ const node_path_1 = require("node:path");
 const fs_extra_1 = require("fs-extra");
 const react_1 = __importDefault(require("./overrides/react"));
 const typescript_1 = __importDefault(require("./overrides/typescript"));
+const json_1 = __importDefault(require("./overrides/json"));
 const logic_1 = __importDefault(require("./rules/logic"));
 const styles_1 = __importDefault(require("./rules/styles"));
 const suggestions_1 = __importDefault(require("./rules/suggestions"));
@@ -21,12 +22,11 @@ const isXXXProject = (xxx) => {
     return Object.keys(deps).includes(xxx);
 };
 const isReactProject = isXXXProject("react");
-const isTSProject = isXXXProject("typescript");
-console.log('isTSProject', ' --> ', isTSProject);
 // Default overrides.
 const overrides = [
     typescript_1.default,
-    jest_1.default
+    jest_1.default,
+    json_1.default
 ];
 const plugins = [
     "comments",
@@ -54,6 +54,15 @@ exports.default = {
             experimentalObjectRestSpread: true,
         }
     },
+    ignorePatterns: [
+        // "__test__/**/*",
+        // "*.{spec,test}.{t,j}sx?"
+        // Ignore all .d.ts file
+        "*.d.ts"
+    ],
+    extends: [
+        "plugin:import/recommended"
+    ],
     rules: {
         ...logic_1.default.rules,
         ...styles_1.default.rules,

@@ -1,4 +1,4 @@
-declare const overrides: import("eslint").Linter.ConfigOverride<import("eslint").Linter.RulesRecord>[] | undefined, plugins: string[] | undefined, env: {
+declare const env: {
     [name: string]: boolean;
-} | undefined, parserOptions: import("eslint").Linter.ParserOptions | undefined, rules: Partial<import("eslint").Linter.RulesRecord> | undefined;
-export { overrides, plugins, env, parserOptions, rules };
+} | undefined, ignorePatterns: string | string[] | undefined, overrides: import("eslint").Linter.ConfigOverride<import("eslint").Linter.RulesRecord>[] | undefined, parserOptions: import("eslint").Linter.ParserOptions | undefined, plugins: string[] | undefined, rules: Partial<import("eslint").Linter.RulesRecord> | undefined;
+export { env, ignorePatterns, overrides, parserOptions, plugins, rules };
