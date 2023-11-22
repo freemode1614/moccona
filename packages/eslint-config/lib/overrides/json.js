@@ -4,10 +4,10 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    files: ["**/*.json"],
+    files: ['**/*.json'],
     rules: {
-        "json/*": ["warn"],
-        "json/duplicate-key": "error",
-        "json/trailing-comma": "error"
+        'json/*': ['warn'],
+        'json/duplicate-key': 'error',
+        'json/trailing-comma': 'error',
     },
 };

@@ -4,6 +4,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    files: ["**/*.{spec,test}.{j,t}sx?"],
+    files: ['**/*.{spec,test}.{j,t}sx?'],
     rules: {},
 };

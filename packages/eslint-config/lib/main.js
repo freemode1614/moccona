@@ -13,15 +13,16 @@ const styles_1 = __importDefault(require("./rules/styles"));
 const suggestions_1 = __importDefault(require("./rules/suggestions"));
 const jest_1 = __importDefault(require("./overrides/jest"));
 const isXXXProject = (xxx) => {
-    const pkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'package.json'), { throws: true });
+    const pkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'package.json'), { throws: true, });
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
         ...(pkg.peerDependencies ?? {}),
     };
-    return Object.keys(deps).includes(xxx);
+    return Object.keys(deps).
+        includes(xxx);
 };
-const isReactProject = isXXXProject("react");
+const isReactProject = isXXXProject('react');
 // Default overrides.
 const overrides = [
     typescript_1.default,
@@ -29,13 +30,13 @@ const overrides = [
     json_1.default
 ];
 const plugins = [
-    "comments",
-    "compat",
-    "import",
-    "jest",
-    "jsdoc",
-    "n",
-    "unicorn",
+    'comments',
+    'compat',
+    'import',
+    'jest',
+    'jsdoc',
+    'n',
+    'unicorn'
 ];
 if (isReactProject) {
     overrides.push(react_1.default);
@@ -46,22 +47,22 @@ exports.default = {
     env: {
         browser: true,
         commonjs: true,
-        es6: true
+        es6: true,
     },
     parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: {
             experimentalObjectRestSpread: true,
-        }
+        },
     },
     ignorePatterns: [
         // "__test__/**/*",
         // "*.{spec,test}.{t,j}sx?"
         // Ignore all .d.ts file
-        "*.d.ts"
+        '*.d.ts'
     ],
     extends: [
-        "plugin:import/recommended"
+        'plugin:import/recommended'
     ],
     rules: {
         ...logic_1.default.rules,

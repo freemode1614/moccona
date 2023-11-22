@@ -2,9 +2,9 @@
  * Rule for test case
  */
 
-import { Linter } from "eslint";
+import { Linter } from 'eslint';
 
 export default {
-    files: ["**/*.{spec,test}.{j,t}sx?"],
+    files: ['**/*.{spec,test}.{j,t}sx?'],
     rules: {},
 } as Linter.ConfigOverride;

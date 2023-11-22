@@ -1,4 +1,4 @@
-import config from "./main";
+import config from './main';
 
 const {
     env,

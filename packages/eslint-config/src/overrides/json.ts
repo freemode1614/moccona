@@ -2,13 +2,13 @@
  * Rule for test case
  */
 
-import { Linter } from "eslint";
+import { Linter } from 'eslint';
 
 export default {
-    files: ["**/*.json"],
+    files: ['**/*.json'],
     rules: {
-        "json/*": ["warn"],
-        "json/duplicate-key": "error",
-        "json/trailing-comma": "error"
+        'json/*': ['warn'],
+        'json/duplicate-key': 'error',
+        'json/trailing-comma': 'error',
     },
 } as Linter.ConfigOverride;
