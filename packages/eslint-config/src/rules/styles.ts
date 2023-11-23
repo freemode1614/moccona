@@ -30,7 +30,7 @@ export default {
         'eol-last': 'off', // Require or disallow newline at the end of files
         'func-call-spacing': ['warn', 'never'], // Require or disallow spacing between function identifiers and their invocations
         'function-call-argument-newline': ['warn', 'consistent'], // Enforce line breaks between arguments of a function call
-        'function-paren-newline': ['warn', 'never'], // Enforce consistent line breaks inside function parentheses
+        'function-paren-newline': ['warn', 'consistent'], // Enforce consistent line breaks inside function parentheses
         'generator-star-spacing': ['warn'], // Enforce consistent spacing around `*` operators in generator functions
         'implicit-arrow-linebreak': ['warn', 'beside'], // Enforce the location of arrow function bodies
         indent: ['warn', 4], // Enforce consistent indentation

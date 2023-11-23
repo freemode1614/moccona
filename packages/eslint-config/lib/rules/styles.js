@@ -29,7 +29,7 @@ exports.default = {
         'eol-last': 'off',
         'func-call-spacing': ['warn', 'never'],
         'function-call-argument-newline': ['warn', 'consistent'],
-        'function-paren-newline': ['warn', 'never'],
+        'function-paren-newline': ['warn', 'consistent'],
         'generator-star-spacing': ['warn'],
         'implicit-arrow-linebreak': ['warn', 'beside'],
         indent: ['warn', 4],

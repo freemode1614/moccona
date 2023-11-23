@@ -13,7 +13,7 @@ export default {
         ecmaFeatures: { jsx: true, experimentalObjectRestSpread: true, },
     },
     plugins: [
-        'react', 'hooks', 'jsx-a11y'
+        'react', 'hooks', 'jsx-a11y', 'refresh'
     ],
     settings: { react: { version: 'detect', }, },
     rules: {
