@@ -1,6 +1,6 @@
 {
   "name": "@moccona/eslint-config",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A simple eslint configuration",
   "main": "./lib/index.js",
   "exports": {
@@ -15,7 +15,8 @@
     "build": "tsc",
     "start": "tsc --watch",
     "test": "vitest --watch false",
-    "lint": "eslint **/*.ts --fix --no-ignore"
+    "lint": "eslint **/*.ts --fix --no-ignore",
+    "prepublishOnly": "tsc --noEmit"
   },
   "keywords": [],
   "author": "wp.l",
