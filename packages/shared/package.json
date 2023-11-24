@@ -1,23 +1,25 @@
 {
-  "name": "@moccona/shared",
-  "version": "0.0.0",
-  "description": "Shared utils between @moccona",
-  "main": "./lib/index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "tsc --watch",
-    "test": "vitest --watch false"
-  },
-  "type": "module",
-  "keywords": [],
-  "author": "wp.l",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^20.9.0",
-    "typescript": "^5.2.2",
-    "vitest": "^0.34.6"
-  },
-  "eslintConfig": {
-    "extends":["../eslint-config"]
-  }
+    "name": "@moccona/shared",
+    "version": "0.0.0",
+    "description": "Shared utils between @moccona",
+    "main": "./lib/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "tsc --watch",
+        "test": "vitest --watch false"
+    },
+    "type": "module",
+    "keywords": [],
+    "author": "wp.l",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^20.9.0",
+        "typescript": "^5.2.2",
+        "vitest": "^0.34.6"
+    },
+    "eslintConfig": {
+        "extends": [
+            "../eslint-config"
+        ]
+    }
 }
