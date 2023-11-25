@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "description": "Shared utils between @moccona",
     "main": "./lib/index.js",
+    "private": true,
     "scripts": {
         "build": "tsc",
         "start": "tsc --watch",
