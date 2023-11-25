@@ -18,7 +18,10 @@
         "lint": "eslint **/*.ts --fix --no-ignore",
         "prepublishOnly": "tsc --noEmit"
     },
-    "keywords": [],
+    "keywords": [
+        "eslint",
+        "eslint-config"
+    ],
     "author": "wp.l",
     "license": "ISC",
     "devDependencies": {
@@ -40,10 +43,12 @@
         "eslint-plugin-import": "^2.29.0",
         "eslint-plugin-jest": "^27.6.0",
         "eslint-plugin-jsdoc": "^46.9.0",
+        "eslint-plugin-json": "^3.1.0",
         "eslint-plugin-jsx-a11y": "^6.8.0",
         "eslint-plugin-n": "^16.3.1",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-refresh": "^0.4.4",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
         "eslint-plugin-unicorn": "^49.0.0",
         "fs-extra": "^11.1.1",
         "pkg-types": "^1.0.3"

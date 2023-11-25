@@ -1,14 +1,16 @@
-import { Linter } from 'eslint';
 import { resolve } from 'node:path';
+
+import { Linter } from 'eslint';
 import { readJSONSync } from 'fs-extra';
 import { type PackageJson } from 'pkg-types';
+
+import jestRules from './overrides/jest';
+import jsonOverride from './overrides/json';
 import reactOverride from './overrides/react';
 import tsOverride from './overrides/typescript';
-import jsonOverride from './overrides/json';
 import logicRules from './rules/logic';
 import styleRules from './rules/styles';
 import suggestionRules from './rules/suggestions';
-import jestRules from './overrides/jest';
 
 const isXXXProject = (xxx: string) => {
     const pkg: PackageJson = readJSONSync(resolve(process.cwd(), 'package.json'), { throws: true, });
@@ -38,7 +40,8 @@ const plugins: string[] = [
     'jest',
     'jsdoc',
     'n',
-    'unicorn'
+    'unicorn',
+    'simple-import-sort'
 ];
 
 if (isReactProject) {
@@ -72,5 +75,10 @@ export default {
         ...logicRules.rules,
         ...styleRules.rules,
         ...suggestionRules.rules,
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-duplicates': 'error',
     },
 } as Linter.Config;

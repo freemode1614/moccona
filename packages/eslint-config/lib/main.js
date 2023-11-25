@@ -5,13 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const node_path_1 = require("node:path");
 const fs_extra_1 = require("fs-extra");
+const jest_1 = __importDefault(require("./overrides/jest"));
+const json_1 = __importDefault(require("./overrides/json"));
 const react_1 = __importDefault(require("./overrides/react"));
 const typescript_1 = __importDefault(require("./overrides/typescript"));
-const json_1 = __importDefault(require("./overrides/json"));
 const logic_1 = __importDefault(require("./rules/logic"));
 const styles_1 = __importDefault(require("./rules/styles"));
 const suggestions_1 = __importDefault(require("./rules/suggestions"));
-const jest_1 = __importDefault(require("./overrides/jest"));
 const isXXXProject = (xxx) => {
     const pkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'package.json'), { throws: true, });
     const deps = {
@@ -36,7 +36,8 @@ const plugins = [
     'jest',
     'jsdoc',
     'n',
-    'unicorn'
+    'unicorn',
+    'simple-import-sort'
 ];
 if (isReactProject) {
     overrides.push(react_1.default);
@@ -68,5 +69,10 @@ exports.default = {
         ...logic_1.default.rules,
         ...styles_1.default.rules,
         ...suggestions_1.default.rules,
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-duplicates': 'error',
     },
 };
