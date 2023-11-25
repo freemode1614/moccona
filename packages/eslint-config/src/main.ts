@@ -63,7 +63,7 @@ export default {
         // "__test__/**/*",
         // "*.{spec,test}.{t,j}sx?"
         // Ignore all .d.ts file
-        '*.d.ts'
+        '**/*.d.ts'
     ],
     extends: [
         'plugin:import/recommended'
