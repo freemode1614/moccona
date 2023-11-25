@@ -3,6 +3,10 @@
     "version": "0.0.1",
     "description": "A simple eslint configuration",
     "main": "./lib/index.js",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "exports": {
         "./package.json": "./package.json",
         ".": {
