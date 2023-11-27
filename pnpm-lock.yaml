@@ -20,15 +20,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^6.11.0
         version: 6.11.0(eslint@8.54.0)(typescript@5.2.2)
-      eslint-plugin-comments:
-        specifier: ^1.0.0
-        version: 1.0.0(eslint@8.54.0)
       eslint-plugin-compat:
         specifier: ^4.2.0
         version: 4.2.0(eslint@8.54.0)
-      eslint-plugin-eslint-comments:
-        specifier: ^3.2.0
-        version: 3.2.0(eslint@8.54.0)
       eslint-plugin-import:
         specifier: ^2.29.0
         version: 2.29.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)
@@ -62,9 +56,6 @@ importers:
       fs-extra:
         specifier: ^11.1.1
         version: 11.1.1
-      pkg-types:
-        specifier: ^1.0.3
-        version: 1.0.3
     devDependencies:
       '@types/eslint':
         specifier: ^8.44.7
@@ -78,6 +69,9 @@ importers:
       eslint:
         specifier: ^8.54.0
         version: 8.54.0
+      pkg-types:
+        specifier: ^1.0.3
+        version: 1.0.3
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -100,21 +94,6 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
-
-  packages/plugin:
-    devDependencies:
-      '@moccona/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@types/node':
-        specifier: ^20.9.0
-        version: 20.9.0
-      typescript:
-        specifier: ^5.2.2
-        version: 5.2.2
-      vitest:
-        specifier: ^0.34.6
-        version: 0.34.6
 
   packages/shared:
     devDependencies:
@@ -1499,14 +1478,6 @@ packages:
       path-type: 4.0.0
     dev: false
 
-  /doctrine@0.6.4:
-    resolution: {integrity: sha512-FSGvDB23RFdm/Z2hEINXN1AcBW5I4YBqpGD/lScJV34vuOwrPFyLHN9bwCzLa6lUmqS6ipdp5XlVJRQ6yJ5iSA==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      esutils: 1.1.6
-      isarray: 0.0.1
-    dev: false
-
   /doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
@@ -1717,15 +1688,6 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-comments@1.0.0(eslint@8.54.0):
-    resolution: {integrity: sha512-GSRgKpLvV7gKkQMXlHQxRAR5VkHB7cB2B/lLubR4haz2Qd2ACZCVXukXFDAMoiI+8qZ2ZamrxEeavYERjV6cfg==}
-    peerDependencies:
-      eslint: ^1.4.1
-    dependencies:
-      doctrine: 0.6.4
-      eslint: 8.54.0
-    dev: false
-
   /eslint-plugin-compat@4.2.0(eslint@8.54.0):
     resolution: {integrity: sha512-RDKSYD0maWy5r7zb5cWQS+uSPc26mgOzdORJ8hxILmWM7S/Ncwky7BcAtXVY5iRbKjBdHsWU8Yg7hfoZjtkv7w==}
     engines: {node: '>=14.x'}
@@ -1751,17 +1713,6 @@ packages:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.54.0)
       '@eslint-community/regexpp': 4.10.0
       eslint: 8.54.0
-    dev: false
-
-  /eslint-plugin-eslint-comments@3.2.0(eslint@8.54.0):
-    resolution: {integrity: sha512-0jkOl0hfojIHHmEHgmNdqv4fmh7300NdpA9FFpF7zaoLvB/QeXOGNLIo86oAveJFrfB1p05kC8hpEMHM8DwWVQ==}
-    engines: {node: '>=6.5.0'}
-    peerDependencies:
-      eslint: '>=4.19.1'
-    dependencies:
-      escape-string-regexp: 1.0.5
-      eslint: 8.54.0
-      ignore: 5.3.0
     dev: false
 
   /eslint-plugin-import@2.29.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0):
@@ -2055,11 +2006,6 @@ packages:
   /estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
-
-  /esutils@1.1.6:
-    resolution: {integrity: sha512-RG1ZkUT7iFJG9LSHr7KDuuMSlujfeTtMNIcInURxKAxhMtwQhI3NrQhz26gZQYlsYZQKzsnwtpKrFKj9K9Qu1A==}
-    engines: {node: '>=0.10.0'}
-    dev: false
 
   /esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
@@ -2600,10 +2546,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /isarray@0.0.1:
-    resolution: {integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==}
-    dev: false
-
   /isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
     dev: false
@@ -2891,6 +2833,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.0.3
       ufo: 1.3.1
+    dev: true
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -3098,6 +3041,7 @@ packages:
 
   /pathe@1.1.1:
     resolution: {integrity: sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==}
+    dev: true
 
   /pathval@1.1.1:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
@@ -3129,6 +3073,7 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.4.2
       pathe: 1.1.1
+    dev: true
 
   /pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
@@ -3792,6 +3737,7 @@ packages:
 
   /ufo@1.3.1:
     resolution: {integrity: sha512-uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==}
+    dev: true
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

@@ -30,14 +30,13 @@ const overrides = [
     json_1.default
 ];
 const plugins = [
-    'comments',
     'compat',
     'import',
     'jest',
     'jsdoc',
     'n',
-    'unicorn',
-    'simple-import-sort'
+    'simple-import-sort',
+    'unicorn'
 ];
 if (isReactProject) {
     overrides.push(react_1.default);
@@ -60,11 +59,9 @@ exports.default = {
         // "__test__/**/*",
         // "*.{spec,test}.{t,j}sx?"
         // Ignore all .d.ts file
-        '*.d.ts'
+        '**/*.d.ts'
     ],
-    extends: [
-        'plugin:import/recommended'
-    ],
+    extends: ['plugin:import/recommended'],
     rules: {
         ...logic_1.default.rules,
         ...styles_1.default.rules,

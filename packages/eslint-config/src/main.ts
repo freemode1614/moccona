@@ -13,7 +13,10 @@ import styleRules from './rules/styles';
 import suggestionRules from './rules/suggestions';
 
 const isXXXProject = (xxx: string) => {
-    const pkg: PackageJson = readJSONSync(resolve(process.cwd(), 'package.json'), { throws: true, });
+    const pkg: PackageJson = readJSONSync(
+        resolve(process.cwd(), 'package.json'),
+        { throws: true, }
+    );
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
@@ -34,14 +37,13 @@ const overrides: Linter.ConfigOverride[] = [
 ];
 
 const plugins: string[] = [
-    'comments',
     'compat',
     'import',
     'jest',
     'jsdoc',
     'n',
-    'unicorn',
-    'simple-import-sort'
+    'simple-import-sort',
+    'unicorn'
 ];
 
 if (isReactProject) {
@@ -68,9 +70,7 @@ export default {
         // Ignore all .d.ts file
         '**/*.d.ts'
     ],
-    extends: [
-        'plugin:import/recommended'
-    ],
+    extends: ['plugin:import/recommended'],
     rules: {
         ...logicRules.rules,
         ...styleRules.rules,

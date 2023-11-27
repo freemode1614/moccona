@@ -1,6 +1,6 @@
 {
     "name": "@moccona/eslint-config",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A simple eslint configuration",
     "main": "./lib/index.js",
     "publishConfig": {
@@ -33,6 +33,7 @@
         "@types/fs-extra": "^11.0.4",
         "@types/node": "^20.9.0",
         "eslint": "^8.54.0",
+        "pkg-types": "^1.0.3",
         "typescript": "^5.2.2"
     },
     "peerDependencies": {
@@ -41,9 +42,7 @@
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^6.11.0",
         "@typescript-eslint/parser": "^6.11.0",
-        "eslint-plugin-comments": "^1.0.0",
         "eslint-plugin-compat": "^4.2.0",
-        "eslint-plugin-eslint-comments": "^3.2.0",
         "eslint-plugin-import": "^2.29.0",
         "eslint-plugin-jest": "^27.6.0",
         "eslint-plugin-jsdoc": "^46.9.0",
@@ -54,8 +53,7 @@
         "eslint-plugin-react-refresh": "^0.4.4",
         "eslint-plugin-simple-import-sort": "^10.0.0",
         "eslint-plugin-unicorn": "^49.0.0",
-        "fs-extra": "^11.1.1",
-        "pkg-types": "^1.0.3"
+        "fs-extra": "^11.1.1"
     },
     "eslintConfig": {
         "extends": "."
