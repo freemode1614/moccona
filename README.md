@@ -1,3 +1,3 @@
 # moccona
 
-A coffee brand I drink a lot
+A cup of coffee
