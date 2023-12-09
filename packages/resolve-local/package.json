@@ -1,13 +1,15 @@
 {
-    "name": "@moccona/shared",
+    "name": "@moccona/resolve-local",
     "version": "0.0.0",
-    "description": "Shared utils between @moccona",
+    "description": "Resolve local module from where user specified",
     "main": "./lib/index.js",
+    "module": "./lib/index.js",
+    "types": "./lib/index.d.ts",
     "exports": {
         "./package.json": "./package.json",
         ".": {
-            "require": "./",
-            "import": "./"
+            "require": "./lib/index.js",
+            "default": "././lib/index.js"
         }
     },
     "private": true,

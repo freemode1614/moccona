@@ -1,0 +1,2 @@
+const isEsmModule = !__dirname;
+

@@ -10,19 +10,26 @@ export default {
         'array-bracket-newline': ['warn', 'consistent'], // Enforce linebreaks after opening and before closing array brackets
         'array-bracket-spacing': ['warn', 'never'], // Enforce consistent spacing inside array brackets
         'array-element-newline': ['warn', 'consistent'], // Enforce line breaks after each array element
-        'arrow-parens': ['warn', 'as-needed', {
-            requireForBlockBody: true,
-        }], // Require parentheses around arrow function arguments
-        'arrow-spacing': ['warn', { 'before': true, 'after': true, }], // Enforce consistent spacing before and after the arrow in arrow functions
+        'arrow-parens': [
+            'warn',
+            'as-needed',
+            {
+                requireForBlockBody: true,
+            }
+        ], // Require parentheses around arrow function arguments
+        'arrow-spacing': ['warn', { before: true, after: true, }], // Enforce consistent spacing before and after the arrow in arrow functions
         'block-spacing': ['warn', 'always'], // Disallow or enforce spaces inside of blocks after opening block and before closing block
         'brace-style': ['warn', '1tbs'], // Enforce consistent brace style for blocks
-        'comma-dangle': ['error', {
-            'arrays': 'never',
-            'objects': 'always',
-            'imports': 'never',
-            'exports': 'never',
-            'functions': 'never',
-        }], // Require or disallow trailing commas
+        'comma-dangle': [
+            'error',
+            {
+                arrays: 'never',
+                objects: 'always',
+                imports: 'never',
+                exports: 'never',
+                functions: 'never',
+            }
+        ], // Require or disallow trailing commas
         'comma-spacing': ['warn', { before: false, after: true, }], // Enforce consistent spacing before and after commas
         'comma-style': ['warn', 'last'], // Enforce consistent comma style
         'computed-property-spacing': ['warn', 'never'], // Enforce consistent spacing inside computed property brackets
@@ -39,18 +46,24 @@ export default {
         'keyword-spacing': ['off'], // Enforce consistent spacing before and after keywords
         'line-comment-position': ['off', 'above'], // Enforce position of line comments
         'linebreak-style': ['off'], // Enforce consistent linebreak style
-        'lines-around-comment': ['off', {
-            beforeBlockComment: false,
-            beforeLineComment: true,
-        }], // Require empty lines around comments
+        'lines-around-comment': [
+            'off',
+            {
+                beforeBlockComment: false,
+                beforeLineComment: true,
+            }
+        ], // Require empty lines around comments
         'lines-between-class-members': ['off'], // Require or disallow an empty line between class members
         'max-len': ['off'], // Enforce a maximum line length
         'max-statements-per-line': ['off'], // Enforce a maximum number of statements allowed per line
         'multiline-ternary': ['off'], // Enforce newlines between operands of ternary expressions
         'new-parens': ['off'], // Enforce or disallow parentheses when invoking a constructor with no arguments
-        'newline-per-chained-call': ['warn', {
-            ignoreChainWithDepth: 1,
-        }], // Require a newline after each call in a method chain
+        'newline-per-chained-call': [
+            'warn',
+            {
+                ignoreChainWithDepth: 1,
+            }
+        ], // Require a newline after each call in a method chain
         'no-extra-parens': ['off'], // Disallow unnecessary parentheses
         'no-mixed-spaces-and-tabs': ['off'], // Disallow mixed spaces and tabs for indentation
         'no-multi-spaces': ['off'], // Disallow multiple spaces
@@ -71,11 +84,14 @@ export default {
         'semi-spacing': ['off'], // Enforce consistent spacing before and after semicolons
         'semi-style': ['off'], // Enforce location of semicolons
         'space-before-blocks': ['warn'], // Enforce consistent spacing before blocks
-        'space-before-function-paren': ['off', {
-            'anonymous': 'always',
-            'named': 'always',
-            'asyncArrow': 'always',
-        }], // Enforce consistent spacing before `function` definition opening parenthesis
+        'space-before-function-paren': [
+            'off',
+            {
+                anonymous: 'always',
+                named: 'always',
+                asyncArrow: 'always',
+            }
+        ], // Enforce consistent spacing before `function` definition opening parenthesis
         'space-in-parens': ['off'], // Enforce consistent spacing inside parentheses
         'space-infix-ops': ['off'], // Require spacing around infix operators
         'space-unary-ops': ['off'], // Enforce consistent spacing before or after unary operators
