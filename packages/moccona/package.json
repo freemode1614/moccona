@@ -1,7 +1,7 @@
 {
-    "name": "@moccona/shared",
+    "name": "@moccona/moccona",
     "version": "0.0.0",
-    "description": "Shared utils between @moccona",
+    "description": "no-config js/ts bundle tool",
     "main": "./lib/index.js",
     "module": "./lib/index.js",
     "types": "./lib/index.d.ts",
@@ -12,7 +12,6 @@
             "import": "./lib/index.js"
         }
     },
-    "private": true,
     "scripts": {
         "build": "tsc",
         "start": "tsc --watch",

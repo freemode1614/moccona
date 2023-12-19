@@ -1,7 +1,7 @@
 {
-    "name": "@moccona/resolve-local",
+    "name": "@moccona/require-local",
     "version": "0.0.0",
-    "description": "Resolve local module from where user specified",
+    "description": "Require local module from where user specified",
     "main": "./lib/index.js",
     "module": "./lib/index.js",
     "types": "./lib/index.d.ts",
@@ -12,7 +12,6 @@
             "default": "././lib/index.js"
         }
     },
-    "private": true,
     "scripts": {
         "build": "tsc",
         "start": "tsc --watch",
@@ -23,6 +22,7 @@
     "author": "wp.l",
     "license": "ISC",
     "devDependencies": {
+        "@moccona/shared": "workspace:*",
         "@types/node": "^20.9.0",
         "typescript": "^5.2.2",
         "vitest": "^0.34.6"

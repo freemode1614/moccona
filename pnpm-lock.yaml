@@ -97,6 +97,9 @@ importers:
 
   packages/resolve-local:
     devDependencies:
+      '@moccona/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@types/node':
         specifier: ^20.9.0
         version: 20.9.0
