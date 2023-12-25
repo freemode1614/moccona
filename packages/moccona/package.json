@@ -12,6 +12,7 @@
             "import": "./lib/index.js"
         }
     },
+    "private": true,
     "scripts": {
         "build": "tsc",
         "start": "tsc --watch",
