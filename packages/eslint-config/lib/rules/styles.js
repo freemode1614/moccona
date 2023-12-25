@@ -9,19 +9,26 @@ exports.default = {
         'array-bracket-newline': ['warn', 'consistent'],
         'array-bracket-spacing': ['warn', 'never'],
         'array-element-newline': ['warn', 'consistent'],
-        'arrow-parens': ['warn', 'as-needed', {
+        'arrow-parens': [
+            'warn',
+            'as-needed',
+            {
                 requireForBlockBody: true,
-            }],
-        'arrow-spacing': ['warn', { 'before': true, 'after': true, }],
+            }
+        ],
+        'arrow-spacing': ['warn', { before: true, after: true, }],
         'block-spacing': ['warn', 'always'],
         'brace-style': ['warn', '1tbs'],
-        'comma-dangle': ['error', {
-                'arrays': 'never',
-                'objects': 'always',
-                'imports': 'never',
-                'exports': 'never',
-                'functions': 'never',
-            }],
+        'comma-dangle': [
+            'error',
+            {
+                arrays: 'never',
+                objects: 'always',
+                imports: 'never',
+                exports: 'never',
+                functions: 'never',
+            }
+        ],
         'comma-spacing': ['warn', { before: false, after: true, }],
         'comma-style': ['warn', 'last'],
         'computed-property-spacing': ['warn', 'never'],
@@ -38,18 +45,24 @@ exports.default = {
         'keyword-spacing': ['off'],
         'line-comment-position': ['off', 'above'],
         'linebreak-style': ['off'],
-        'lines-around-comment': ['off', {
+        'lines-around-comment': [
+            'off',
+            {
                 beforeBlockComment: false,
                 beforeLineComment: true,
-            }],
+            }
+        ],
         'lines-between-class-members': ['off'],
         'max-len': ['off'],
         'max-statements-per-line': ['off'],
         'multiline-ternary': ['off'],
         'new-parens': ['off'],
-        'newline-per-chained-call': ['warn', {
+        'newline-per-chained-call': [
+            'warn',
+            {
                 ignoreChainWithDepth: 1,
-            }],
+            }
+        ],
         'no-extra-parens': ['off'],
         'no-mixed-spaces-and-tabs': ['off'],
         'no-multi-spaces': ['off'],
@@ -70,11 +83,14 @@ exports.default = {
         'semi-spacing': ['off'],
         'semi-style': ['off'],
         'space-before-blocks': ['warn'],
-        'space-before-function-paren': ['off', {
-                'anonymous': 'always',
-                'named': 'always',
-                'asyncArrow': 'always',
-            }],
+        'space-before-function-paren': [
+            'off',
+            {
+                anonymous: 'always',
+                named: 'always',
+                asyncArrow: 'always',
+            }
+        ],
         'space-in-parens': ['off'],
         'space-infix-ops': ['off'],
         'space-unary-ops': ['off'],

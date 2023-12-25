@@ -48,6 +48,7 @@ exports.default = {
         browser: true,
         commonjs: true,
         es6: true,
+        jest: true,
     },
     parserOptions: {
         ecmaVersion: 'latest',
