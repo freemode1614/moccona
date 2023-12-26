@@ -6,6 +6,7 @@ import { Linter } from 'eslint';
 
 export default {
     files: ['**/*.json'],
+    plugins: ['json'],
     extends: ['plugin:json/recommended'],
     rules: {
         // 'json/duplicate-key': 'error',

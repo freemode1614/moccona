@@ -51,13 +51,13 @@ if (isReactProject) {
 }
 
 export default {
-    overrides,
-    plugins,
     env: {
         browser: true,
         commonjs: true,
         es6: true,
         jest: true,
+        worker: true,
+        node: true,
     },
     parserOptions: {
         ecmaVersion: 'latest',
@@ -72,6 +72,8 @@ export default {
         '**/*.d.ts'
     ],
     extends: ['plugin:import/recommended'],
+    overrides,
+    plugins,
     rules: {
         ...logicRules.rules,
         ...styleRules.rules,
