@@ -1,5 +1,11 @@
 # @moccona/eslint-config
 
+## 0.1.3
+
+### Patch Changes
+
+- 57c9236: Fix config error
+
 ## 0.1.2
 
 ### Patch Changes
