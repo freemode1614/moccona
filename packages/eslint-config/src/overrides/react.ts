@@ -12,13 +12,8 @@ export default {
         sourceType: 'module',
         ecmaFeatures: { jsx: true, experimentalObjectRestSpread: true, },
     },
-    extends: [
-        'plugin:react/recommended',
-        'plugin:react-hooks/recommended'
-    ],
-    plugins: [
-        'react', 'react-hooks', 'jsx-a11y', 'react-refresh'
-    ],
+    extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended'],
+    plugins: ['react', 'react-hooks', 'jsx-a11y', 'react-refresh'],
     settings: { react: { version: 'detect', }, },
     rules: {
         // // react

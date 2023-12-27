@@ -19,6 +19,7 @@ const isXXXProject = (xxx: string) => {
     pkg = readJSONSync(resolve(process.cwd(), 'package.json'), {
         throws: false,
     });
+
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
@@ -31,6 +32,8 @@ const isXXXProject = (xxx: string) => {
 
 const isReactProject = isXXXProject('react');
 
+const isUsingPrettier = isXXXProject('prettier');
+
 // Default overrides.
 const overrides: Linter.ConfigOverride[] = [
     tsOverride,
@@ -41,7 +44,6 @@ const overrides: Linter.ConfigOverride[] = [
 const plugins: string[] = [
     'compat',
     'import',
-    'jest',
     'jsdoc',
     'n',
     'simple-import-sort',
@@ -49,21 +51,18 @@ const plugins: string[] = [
 ];
 
 if (isReactProject) {
-    const {
-        dependencies = {},
-        peerDependencies = {},
-        devDependencies = {},
-    } = pkg!;
-
-    const deps = { ...dependencies, ...peerDependencies, ...devDependencies, };
-
-    const reactVersion = deps['react'];
-
-    if (reactVersion) {
-        const gt17 = semver.gte(reactVersion, '17');
-        if (gt17) {
-            reactOverride.plugins!.push('plugin:react/jsx-runtime');
+    try {
+        const reactPkg = readJSONSync(
+            resolve(process.cwd(), 'node_modules/react/package.json')
+        ) as PackageJson;
+        if (reactPkg) {
+            const satisfied = semver.satisfies(reactPkg.version!, '>=17');
+            if (satisfied) {
+                reactOverride.plugins!.push('plugin:react/jsx-runtime');
+            }
         }
+    } catch (error) {
+        //
     }
 
     overrides.push(reactOverride);
@@ -90,12 +89,14 @@ export default {
         // Ignore all .d.ts file
         '**/*.d.ts'
     ],
-    extends: ['plugin:import/recommended'],
+    extends: ['plugin:import/recommended'].concat(
+        isUsingPrettier ? ['plugin:prettier/recommended', 'prettier'] : []
+    ),
     overrides,
     plugins,
     rules: {
         ...logicRules.rules,
-        ...styleRules.rules,
+        ...(isUsingPrettier ? {} : styleRules.rules),
         ...suggestionRules.rules,
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',

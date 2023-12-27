@@ -27,6 +27,7 @@ const isXXXProject = (xxx) => {
         includes(xxx);
 };
 const isReactProject = isXXXProject('react');
+const isUsingPrettier = isXXXProject('prettier');
 // Default overrides.
 const overrides = [
     typescript_1.default,
@@ -42,14 +43,17 @@ const plugins = [
     'unicorn'
 ];
 if (isReactProject) {
-    const { dependencies = {}, peerDependencies = {}, devDependencies = {}, } = pkg;
-    const deps = { ...dependencies, ...peerDependencies, ...devDependencies, };
-    const reactVersion = deps['react'];
-    if (reactVersion) {
-        const gt17 = semver_1.default.gte(reactVersion, '17');
-        if (gt17) {
-            react_1.default.plugins.push('plugin:react/jsx-runtime');
+    try {
+        const reactPkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'node_modules/react/package.json'));
+        if (reactPkg) {
+            const satisfied = semver_1.default.satisfies(reactPkg.version, '>=17');
+            if (satisfied) {
+                react_1.default.plugins.push('plugin:react/jsx-runtime');
+            }
         }
+    }
+    catch (error) {
+        //
     }
     overrides.push(react_1.default);
 }
@@ -74,12 +78,12 @@ exports.default = {
         // Ignore all .d.ts file
         '**/*.d.ts'
     ],
-    extends: ['plugin:import/recommended'],
+    extends: ['plugin:import/recommended'].concat(isUsingPrettier ? ['plugin:prettier/recommended', 'prettier'] : []),
     overrides,
     plugins,
     rules: {
         ...logic_1.default.rules,
-        ...styles_1.default.rules,
+        ...(isUsingPrettier ? {} : styles_1.default.rules),
         ...suggestions_1.default.rules,
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',

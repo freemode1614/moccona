@@ -17,7 +17,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "start": "tsc --watch",
+        "dev": "tsc --watch",
         "test": "vitest --watch false",
         "lint": "eslint **/*.ts --fix --no-ignore",
         "prepublishOnly": "tsc --noEmit"
@@ -33,16 +33,16 @@
         "@types/fs-extra": "^11.0.4",
         "@types/node": "^20.9.0",
         "@types/semver": "^7.5.6",
-        "eslint": "^8.54.0",
         "pkg-types": "^1.0.3",
         "typescript": "^5.2.2"
     },
     "peerDependencies": {
-        "eslint": "^8"
+        "eslint": ">=8.0"
     },
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^6.11.0",
         "@typescript-eslint/parser": "^6.11.0",
+        "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-compat": "^4.2.0",
         "eslint-plugin-import": "^2.29.0",
         "eslint-plugin-jest": "^27.6.0",
@@ -50,6 +50,7 @@
         "eslint-plugin-json": "^3.1.0",
         "eslint-plugin-jsx-a11y": "^6.8.0",
         "eslint-plugin-n": "^16.3.1",
+        "eslint-plugin-prettier": "^5.1.2",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.4",

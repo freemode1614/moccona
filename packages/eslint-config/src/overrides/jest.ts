@@ -8,10 +8,8 @@ export default {
     env: {
         'jest/globals': true,
     },
+    plugins: ['jest'],
     extends: ['plugin:jest/recommended'],
     files: ['**/*.{spec,test}.{j,t}sx?'],
-    plugins: [
-        'jest'
-    ],
     rules: {},
 } as Linter.ConfigOverride;
