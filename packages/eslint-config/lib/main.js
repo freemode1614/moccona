@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const node_path_1 = require("node:path");
 const fs_extra_1 = require("fs-extra");
+const semver_1 = __importDefault(require("semver"));
 const jest_1 = __importDefault(require("./overrides/jest"));
 const json_1 = __importDefault(require("./overrides/json"));
 const react_1 = __importDefault(require("./overrides/react"));
@@ -12,8 +13,11 @@ const typescript_1 = __importDefault(require("./overrides/typescript"));
 const logic_1 = __importDefault(require("./rules/logic"));
 const styles_1 = __importDefault(require("./rules/styles"));
 const suggestions_1 = __importDefault(require("./rules/suggestions"));
+let pkg;
 const isXXXProject = (xxx) => {
-    const pkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'package.json'), { throws: true, });
+    pkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'package.json'), {
+        throws: false,
+    });
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
@@ -32,23 +36,31 @@ const overrides = [
 const plugins = [
     'compat',
     'import',
-    'jest',
     'jsdoc',
     'n',
     'simple-import-sort',
     'unicorn'
 ];
 if (isReactProject) {
+    const { dependencies = {}, peerDependencies = {}, devDependencies = {}, } = pkg;
+    const deps = { ...dependencies, ...peerDependencies, ...devDependencies, };
+    const reactVersion = deps['react'];
+    if (reactVersion) {
+        const gt17 = semver_1.default.gte(reactVersion, '17');
+        if (gt17) {
+            react_1.default.plugins.push('plugin:react/jsx-runtime');
+        }
+    }
     overrides.push(react_1.default);
 }
 exports.default = {
-    overrides,
-    plugins,
     env: {
         browser: true,
         commonjs: true,
         es6: true,
         jest: true,
+        worker: true,
+        node: true,
     },
     parserOptions: {
         ecmaVersion: 'latest',
@@ -63,6 +75,8 @@ exports.default = {
         '**/*.d.ts'
     ],
     extends: ['plugin:import/recommended'],
+    overrides,
+    plugins,
     rules: {
         ...logic_1.default.rules,
         ...styles_1.default.rules,

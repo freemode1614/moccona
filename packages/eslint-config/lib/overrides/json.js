@@ -5,6 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     files: ['**/*.json'],
+    plugins: ['json'],
     extends: ['plugin:json/recommended'],
     rules: {
     // 'json/duplicate-key': 'error',
