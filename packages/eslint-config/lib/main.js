@@ -29,7 +29,7 @@ const isXXXProject = (xxx) => {
 const isReactProject = isXXXProject('react');
 const isUsingPrettier = isXXXProject('prettier');
 // Default overrides.
-const overrides = [
+let overrides = [
     typescript_1.default,
     jest_1.default,
     json_1.default
@@ -57,6 +57,18 @@ if (isReactProject) {
     }
     overrides.push(react_1.default);
 }
+if (isUsingPrettier) {
+    overrides = overrides.map((ov) => {
+        return {
+            ...ov,
+            extends: [
+                ...(ov.extends ?? []),
+                'plugin:prettier/recommended',
+                'prettier'
+            ],
+        };
+    });
+}
 exports.default = {
     env: {
         browser: true,
@@ -78,7 +90,7 @@ exports.default = {
         // Ignore all .d.ts file
         '**/*.d.ts'
     ],
-    extends: ['plugin:import/recommended'].concat(isUsingPrettier ? ['plugin:prettier/recommended', 'prettier'] : []),
+    extends: ['plugin:import/recommended'],
     overrides,
     plugins,
     rules: {

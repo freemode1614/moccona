@@ -35,7 +35,7 @@ const isReactProject = isXXXProject('react');
 const isUsingPrettier = isXXXProject('prettier');
 
 // Default overrides.
-const overrides: Linter.ConfigOverride[] = [
+let overrides: Linter.ConfigOverride[] = [
     tsOverride,
     jestRules,
     jsonOverride
@@ -68,6 +68,23 @@ if (isReactProject) {
     overrides.push(reactOverride);
 }
 
+if(
+    isUsingPrettier
+) {
+    overrides = overrides.map(
+        (ov) => {
+            return {
+                ...ov,
+                extends: [
+                    ...(ov.extends ?? []),
+                    'plugin:prettier/recommended',
+                    'prettier'
+                ],
+            }
+        }
+    )
+}
+
 export default {
     env: {
         browser: true,
@@ -89,9 +106,7 @@ export default {
         // Ignore all .d.ts file
         '**/*.d.ts'
     ],
-    extends: ['plugin:import/recommended'].concat(
-        isUsingPrettier ? ['plugin:prettier/recommended', 'prettier'] : []
-    ),
+    extends: ['plugin:import/recommended'],
     overrides,
     plugins,
     rules: {
