@@ -41,7 +41,6 @@ const overrides: Linter.ConfigOverride[] = [
 const plugins: string[] = [
     'compat',
     'import',
-    'jest',
     'jsdoc',
     'n',
     'simple-import-sort',
