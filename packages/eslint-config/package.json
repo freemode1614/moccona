@@ -9,6 +9,7 @@
     },
     "exports": {
         "./package.json": "./package.json",
+        "./flat": "./lib/flat.js",
         ".": {
             "import": "./lib/index.js",
             "require": "./lib/index.js",
