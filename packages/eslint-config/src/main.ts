@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { Linter } from 'eslint';
 import { readJSONSync } from 'fs-extra';
 import { type PackageJson } from 'pkg-types';
+import semver from 'semver';
 
 import jestRules from './overrides/jest';
 import jsonOverride from './overrides/json';
@@ -12,11 +13,12 @@ import logicRules from './rules/logic';
 import styleRules from './rules/styles';
 import suggestionRules from './rules/suggestions';
 
+let pkg: PackageJson;
+
 const isXXXProject = (xxx: string) => {
-    const pkg: PackageJson = readJSONSync(
-        resolve(process.cwd(), 'package.json'),
-        { throws: true, }
-    );
+    pkg = readJSONSync(resolve(process.cwd(), 'package.json'), {
+        throws: false,
+    });
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
@@ -47,6 +49,25 @@ const plugins: string[] = [
 ];
 
 if (isReactProject) {
+    const {
+        dependencies = {},
+        peerDependencies = {},
+        devDependencies = {},
+    } = pkg!;
+
+    const deps = { ...dependencies, ...peerDependencies, ...devDependencies, };
+
+    const reactVersion = deps['react'];
+
+    if (reactVersion) {
+        const gt17 = semver.gte(reactVersion, '17');
+        if (gt17) {
+            reactOverride.plugins!.push(
+                'plugin:react/jsx-runtime'
+            )
+        }
+    }
+
     overrides.push(reactOverride);
 }
 
