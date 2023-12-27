@@ -58,7 +58,7 @@ if (isReactProject) {
         if (reactPkg) {
             const satisfied = semver.satisfies(reactPkg.version!, '>=17');
             if (satisfied) {
-                reactOverride.plugins!.push('plugin:react/jsx-runtime');
+                (reactOverride.extends as Array<string>)!.push('plugin:react/jsx-runtime');
             }
         }
     } catch (error) {
