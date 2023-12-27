@@ -1,5 +1,11 @@
 # @moccona/eslint-config
 
+## 0.1.4
+
+### Patch Changes
+
+- c40fc2b: Fix config error
+
 ## 0.1.3
 
 ### Patch Changes
