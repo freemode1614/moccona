@@ -62,9 +62,7 @@ if (isReactProject) {
     if (reactVersion) {
         const gt17 = semver.gte(reactVersion, '17');
         if (gt17) {
-            reactOverride.plugins!.push(
-                'plugin:react/jsx-runtime'
-            )
+            reactOverride.plugins!.push('plugin:react/jsx-runtime');
         }
     }
 
