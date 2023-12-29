@@ -35,11 +35,7 @@ const isReactProject = isXXXProject('react');
 const isUsingPrettier = isXXXProject('prettier');
 
 // Default overrides.
-let overrides: Linter.ConfigOverride[] = [
-    tsOverride,
-    jestRules,
-    jsonOverride
-];
+let overrides: Linter.ConfigOverride[] = [tsOverride, jestRules, jsonOverride];
 
 const plugins: string[] = [
     'compat',
@@ -58,7 +54,9 @@ if (isReactProject) {
         if (reactPkg) {
             const satisfied = semver.satisfies(reactPkg.version!, '>=17');
             if (satisfied) {
-                (reactOverride.extends as Array<string>)!.push('plugin:react/jsx-runtime');
+                (reactOverride.extends as Array<string>)!.push(
+                    'plugin:react/jsx-runtime'
+                );
             }
         }
     } catch (error) {
@@ -68,21 +66,17 @@ if (isReactProject) {
     overrides.push(reactOverride);
 }
 
-if(
-    isUsingPrettier
-) {
-    overrides = overrides.map(
-        (ov) => {
-            return {
-                ...ov,
-                extends: [
-                    ...(ov.extends ?? []),
-                    'plugin:prettier/recommended',
-                    'prettier'
-                ],
-            }
-        }
-    )
+if (isUsingPrettier) {
+    overrides = overrides.map((ov) => {
+        return {
+            ...ov,
+            extends: [
+                ...(ov.extends ?? []),
+                'plugin:prettier/recommended',
+                'prettier'
+            ],
+        };
+    });
 }
 
 export default {
@@ -100,12 +94,7 @@ export default {
             experimentalObjectRestSpread: true,
         },
     },
-    ignorePatterns: [
-        // "__test__/**/*",
-        // "*.{spec,test}.{t,j}sx?"
-        // Ignore all .d.ts file
-        '**/*.d.ts'
-    ],
+    ignorePatterns: ['**/*.css', '**/*.d.ts'],
     extends: ['plugin:import/recommended'],
     overrides,
     plugins,

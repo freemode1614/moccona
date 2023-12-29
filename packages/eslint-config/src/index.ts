@@ -1,14 +1,21 @@
-import config from './main';
+import { type Linter } from "eslint";
+
+import config from "./main";
 
 const {
-    env,
+    env, //
     ignorePatterns,
     overrides,
     parserOptions,
     plugins,
     rules,
-} = config;
+} = config as Linter.Config;
 
 export {
-    env, ignorePatterns, overrides, parserOptions, plugins, rules
-}
+    env, //
+    ignorePatterns,
+    overrides,
+    parserOptions,
+    plugins,
+    rules,
+};
