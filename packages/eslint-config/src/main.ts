@@ -13,13 +13,17 @@ import logicRules from './rules/logic';
 import styleRules from './rules/styles';
 import suggestionRules from './rules/suggestions';
 
-let pkg: PackageJson;
+const pkg: PackageJson = readJSONSync(resolve(process.cwd(), 'package.json'), {
+    throws: false,
+});
+
+if (!pkg) {
+    throw new Error(
+        'No `package.json` found in local, make sure you using eslint in a valid nodejs package which include a `package.json` file.'
+    );
+}
 
 const isXXXProject = (xxx: string) => {
-    pkg = readJSONSync(resolve(process.cwd(), 'package.json'), {
-        throws: false,
-    });
-
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
@@ -33,6 +37,8 @@ const isXXXProject = (xxx: string) => {
 const isReactProject = isXXXProject('react');
 
 const isUsingPrettier = isXXXProject('prettier');
+
+const isESModule = pkg.type === 'module';
 
 // Default overrides.
 let overrides: Linter.ConfigOverride[] = [tsOverride, jestRules, jsonOverride];
@@ -89,8 +95,13 @@ export default {
         node: true,
     },
     parserOptions: {
+        // set to "script" (default) or "module" if your code is in ECMAScript modules.
+        sourceType: isESModule ? 'module' : 'script',
+        // set "latest" to use the most recently supported version.
         ecmaVersion: 'latest',
         ecmaFeatures: {
+            // enable global strict mode (if ecmaVersion is 5 or greater)
+            impliedStrict: true,
             experimentalObjectRestSpread: true,
         },
     },
