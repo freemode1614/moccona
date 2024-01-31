@@ -13,11 +13,13 @@ const typescript_1 = __importDefault(require("./overrides/typescript"));
 const logic_1 = __importDefault(require("./rules/logic"));
 const styles_1 = __importDefault(require("./rules/styles"));
 const suggestions_1 = __importDefault(require("./rules/suggestions"));
-let pkg;
+const pkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'package.json'), {
+    throws: false,
+});
+if (!pkg) {
+    throw new Error('No `package.json` found in local, make sure you using eslint in a valid nodejs package which include a `package.json` file.');
+}
 const isXXXProject = (xxx) => {
-    pkg = (0, fs_extra_1.readJSONSync)((0, node_path_1.resolve)(process.cwd(), 'package.json'), {
-        throws: false,
-    });
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
@@ -28,12 +30,9 @@ const isXXXProject = (xxx) => {
 };
 const isReactProject = isXXXProject('react');
 const isUsingPrettier = isXXXProject('prettier');
+const isESModule = pkg.type === 'module';
 // Default overrides.
-let overrides = [
-    typescript_1.default,
-    jest_1.default,
-    json_1.default
-];
+let overrides = [typescript_1.default, jest_1.default, json_1.default];
 const plugins = [
     'compat',
     'import',
@@ -79,17 +78,17 @@ exports.default = {
         node: true,
     },
     parserOptions: {
+        // set to "script" (default) or "module" if your code is in ECMAScript modules.
+        sourceType: isESModule ? 'module' : 'script',
+        // set "latest" to use the most recently supported version.
         ecmaVersion: 'latest',
         ecmaFeatures: {
+            // enable global strict mode (if ecmaVersion is 5 or greater)
+            impliedStrict: true,
             experimentalObjectRestSpread: true,
         },
     },
-    ignorePatterns: [
-        // "__test__/**/*",
-        // "*.{spec,test}.{t,j}sx?"
-        // Ignore all .d.ts file
-        '**/*.d.ts'
-    ],
+    ignorePatterns: ['**/*.css', '**/*.d.ts'],
     extends: ['plugin:import/recommended'],
     overrides,
     plugins,

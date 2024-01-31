@@ -1,6 +1,6 @@
-import { type Linter } from "eslint";
+import { type Linter } from 'eslint';
 
-import config from "./main";
+import config from './main';
 
 const {
     env, //
@@ -17,5 +17,5 @@ export {
     overrides,
     parserOptions,
     plugins,
-    rules,
+    rules
 };

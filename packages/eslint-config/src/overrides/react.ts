@@ -16,6 +16,10 @@ export default {
     plugins: ['react', 'react-hooks', 'jsx-a11y', 'react-refresh'],
     settings: { react: { version: 'detect', }, },
     rules: {
+        'react-refresh/only-export-components': [
+            'warn',
+            { allowConstantExport: true, }
+        ],
         // // react
         // 'react/boolean-prop-naming': 'off',
         // 'react/button-has-type': 'off',
