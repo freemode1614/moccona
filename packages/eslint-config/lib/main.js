@@ -88,6 +88,7 @@ exports.default = {
             experimentalObjectRestSpread: true,
         },
     },
+    // Ignore .css and .d.ts files.
     ignorePatterns: ['**/*.css', '**/*.d.ts'],
     extends: ['plugin:import/recommended'],
     overrides,
