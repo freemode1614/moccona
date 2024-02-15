@@ -21,15 +21,13 @@ export default function createPlugin() {
             for await (const plugin of plugins) {
                 try {
                     if (appliedPlugins.includes(plugin)) {
-                        console.warn(`Same plugin executed twice.`);
-                    }
-                    else {
+                        console.warn('Same plugin executed twice.');
+                    } else {
                         const ret = await plugin.handler(ctx);
                         appliedPlugins.push(plugin);
                     }
-                }
-                catch (error) {
-                    console.error("error", error);
+                } catch (error) {
+                    console.error('error', error);
                 }
             }
         }

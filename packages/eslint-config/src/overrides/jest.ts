@@ -8,8 +8,9 @@ import jest from 'eslint-plugin-jest';
 export const flatJestCOverride: Linter.FlatConfig = {
     files: ['**/*.{spec,test}.{j,t}sx?'],
     plugins: { jest, },
+    // @ts-expect-error no error
     rules: {
-        ...(((jest as ESLint.Plugin).configs as ESLint.ConfigData).rules ?? {}),
+        ...(((jest as ESLint.Plugin).configs as ESLint.ConfigData).rules as Partial<Linter.RulesRecord>),
     },
 };
 
