@@ -14,6 +14,14 @@ export const flatJestCOverride: Linter.FlatConfig = {
     },
 };
 
+export const flatJestConfig: Linter.FlatConfig = {
+    files: ['__tests__/**/*.(ts|js)'],
+    linterOptions: {
+        noInlineConfig: true,
+        reportUnusedDisableDirectives: true,
+    },
+};
+
 export default {
     env: {
         'jest/globals': true,

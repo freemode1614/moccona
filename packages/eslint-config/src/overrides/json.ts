@@ -8,6 +8,7 @@ export default {
     files: ['**/*.json'],
     plugins: ['json'],
     extends: ['plugin:json/recommended'],
+    excludedFiles: ['tsconfig.json', 'tsconfig.*.json'],
     rules: {
         // 'json/duplicate-key': 'error',
         // 'json/trailing-comma': 'error',

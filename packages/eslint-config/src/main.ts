@@ -23,7 +23,7 @@ if (!pkg) {
     );
 }
 
-const isXXXProject = (xxx: string) => {
+const isXXXProject = (dep: string) => {
     const deps = {
         ...(pkg.dependencies ?? {}),
         ...(pkg.devDependencies ?? {}),
@@ -31,7 +31,7 @@ const isXXXProject = (xxx: string) => {
     };
 
     return Object.keys(deps).
-        includes(xxx);
+        includes(dep);
 };
 
 const isReactProject = isXXXProject('react');
