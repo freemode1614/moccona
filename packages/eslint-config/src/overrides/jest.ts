@@ -2,15 +2,14 @@
  * Rule for test case
  */
 
-import { ESLint, Linter } from 'eslint';
+import { ESLint, Linter, } from 'eslint';
 import jest from 'eslint-plugin-jest';
 
-export const flatJestCOverride: Linter.FlatConfig = {
+export const flatJestOverride: Linter.FlatConfig = {
     files: ['**/*.{spec,test}.{j,t}sx?'],
     plugins: { jest, },
-    // @ts-expect-error no error
     rules: {
-        ...(((jest as ESLint.Plugin).configs as ESLint.ConfigData).rules as Partial<Linter.RulesRecord>),
+        ...((jest as ESLint.Plugin).configs!.recommended! as ESLint.ConfigData).rules! as Linter.RulesRecord
     },
 };
 
@@ -27,7 +26,18 @@ export default {
         'jest/globals': true,
     },
     plugins: ['jest'],
+    parser: '@typescript-eslint/parser',
     extends: ['plugin:jest/recommended'],
-    files: ['**/*.{spec,test}.{j,t}sx?'],
+    files: ['**/*.{spec,test}.{j,t}sx'],
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true, experimentalObjectRestSpread: true,
+        },
+    },
+    settings: {
+        react: { version: 'detect', },
+    },
     rules: {},
 } as Linter.ConfigOverride;

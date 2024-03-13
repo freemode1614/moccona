@@ -1,2 +1,2 @@
 
-declare module 'eslint-plugin-jest' {}
+declare module 'eslint-plugin-jest' { }

@@ -1,2 +1,6 @@
+import { Linter } from 'eslint';
+import { flatJestOverride } from './overrides/jest';
 
-export default [];
+export default [
+    flatJestOverride
+] as Linter.FlatConfig[];
