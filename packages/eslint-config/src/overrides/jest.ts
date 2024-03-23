@@ -33,7 +33,8 @@ export default {
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
-            jsx: true, experimentalObjectRestSpread: true,
+            jsx: true,
+            experimentalObjectRestSpread: true,
         },
     },
     settings: {

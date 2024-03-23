@@ -1,71 +1,73 @@
 {
-    "name": "@moccona/eslint-config",
-    "version": "0.1.4",
-    "description": "A simple eslint configuration",
-    "main": "./lib/index.js",
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://registry.npmjs.org/"
-    },
-    "exports": {
-        "./package.json": "./package.json",
-        "./flat": "./lib/flat.js",
-        ".": {
-            "import": "./lib/index.js",
-            "require": "./lib/index.js",
-            "types": "./lib/index.d.ts"
-        }
-    },
-    "scripts": {
-        "build": "tsc",
-        "dev": "tsc --watch",
-        "test": "vitest --watch false",
-        "lint": "eslint **/*.ts --fix --no-ignore",
-        "prepublishOnly": "tsc --noEmit"
-    },
-    "keywords": [
-        "eslint",
-        "eslint-config"
-    ],
-    "author": "wp.l",
-    "license": "ISC",
-    "devDependencies": {
-        "@types/eslint": "^8.44.7",
-        "@types/fs-extra": "^11.0.4",
-        "@types/node": "^20.9.0",
-        "@types/semver": "^7.5.6",
-        "pkg-types": "^1.0.3",
-        "typescript": "^5.2.2",
-        "vitest": "^0.34.6"
-    },
-    "peerDependencies": {
-        "eslint": ">=8.0"
-    },
-    "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.11.0",
-        "@typescript-eslint/parser": "^6.11.0",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-compat": "^4.2.0",
-        "eslint-plugin-import": "^2.29.0",
-        "eslint-plugin-jest": "^27.6.0",
-        "eslint-plugin-jsdoc": "^46.9.0",
-        "eslint-plugin-json": "^3.1.0",
-        "eslint-plugin-jsx-a11y": "^6.8.0",
-        "eslint-plugin-n": "^16.3.1",
-        "eslint-plugin-prettier": "^5.1.2",
-        "eslint-plugin-react": "^7.33.2",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.4",
-        "eslint-plugin-simple-import-sort": "^10.0.0",
-        "eslint-plugin-unicorn": "^49.0.0",
-        "fs-extra": "^11.1.1",
-        "semver": "^7.5.4",
-        "typescript-eslint": "^7.0.2"
-    },
-    "eslintConfig": {
-        "extends": ".",
-        "ignorePatterns": [
-            "lib"
-        ]
+  "name": "@moccona/eslint-config",
+  "version": "0.1.4",
+  "description": "A simple eslint configuration",
+  "main": "./lib/index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./flat": "./lib/flat.js",
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
     }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest --watch false",
+    "lint": "eslint **/*.ts --fix --no-ignore",
+    "prepublishOnly": "tsc --noEmit"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "author": "wp.l",
+  "license": "ISC",
+  "devDependencies": {
+    "@moccona/prettierrc": "workspace:*",
+    "@types/eslint": "^8.44.7",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.9.0",
+    "@types/semver": "^7.5.6",
+    "pkg-types": "^1.0.3",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-compat": "^4.2.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unicorn": "^49.0.0",
+    "fs-extra": "^11.1.1",
+    "semver": "^7.5.4",
+    "typescript-eslint": "^7.0.2"
+  },
+  "prettier": "@moccona/prettierrc",
+  "eslintConfig": {
+    "extends": ".",
+    "ignorePatterns": [
+      "lib"
+    ]
+  }
 }
